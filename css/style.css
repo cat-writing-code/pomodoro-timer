@@ -1,0 +1,16 @@
+@font-face {
+    font-family: Yomogi-Regular;
+    src: url('assets/fonts/Yomogi-Regular.ttf');
+}
+@font-face {
+    font-family: Matcha;
+    src: url('assets/fonts/Matcha Mint.ttf');
+}
+
+title {
+    font-family: Matcha;
+}
+
+time-controls {
+    font-family: Yomogi-Regular, sans-serif;
+}
