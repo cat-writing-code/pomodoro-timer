@@ -18,8 +18,3 @@ function pauseTimer() {
 function resetTimer() {
 
 }
-
-// depending on previous state, set the upcoming timer to the correct time
-function setTimer() {
-
-}
