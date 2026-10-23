@@ -7,10 +7,14 @@ Fonts: <br />
     &ensp;Yomogi Font By Satsuyako Design Works (1001 Fonts)
     &ensp;https://www.1001fonts.com/yomogi-font.html
 
-SFX:
-    Timer
+<br />
 
-    Button Click
+SFX:<br />
+    &ensp;Timer
+    <br />
+    &ensp;Button Click
 
-Icons:
-    Me
+<br />
+
+Icons:<br />
+    &ensp;Me
