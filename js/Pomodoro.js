@@ -82,16 +82,31 @@ function render(t) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    const click = new Audio('assets/sfx/click.mp3');
     timerDis = document.querySelector('.timer h2');
     statusDis = document.querySelector('.status h2');
 
-    document.getElementById('startButt').addEventListener('click', function () {startTimer();});
-    document.getElementById('pauseButt').addEventListener('click', function () {pauseTimer();});
+    // helper func for button click
+    function playClick() {
+        click.currentTime = 0;
+        click.play().catch(e => console.log("audio failed to play", e));
+    }
+
+    document.getElementById('startButt').addEventListener('click', function () {
+        playClick();
+        startTimer();
+    });
+    document.getElementById('pauseButt').addEventListener('click', function () {
+        playClick();
+        pauseTimer();
+    });
     document.getElementById('stopButt').addEventListener('click', function () {
+        playClick();
         pauseTimer();
         loadPhase(phase);
     });
     document.getElementById('resetButt').addEventListener('click', function () {
+        playClick();
         resetTimer();
         workCount = 0;
         loadPhase(work);
