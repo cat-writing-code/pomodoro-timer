@@ -52,3 +52,7 @@
     border: solid #432c26;
     cursor: pointer;
 }
+
+.timer-controls button:hover{
+    background-color: #f0c5b9;
+}
