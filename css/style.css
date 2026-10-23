@@ -11,6 +11,7 @@
     font-family: 'Matcha';
     font-size: 26px;
     padding: 1px;
+    color: #d79b95;
 }
 
 .title h1 {
@@ -20,6 +21,7 @@
 .status {
     font-family: 'Yomogi-Regular';
     font-size: 18px;
+    color: #d79b95;
 }
 
 .status h2 {
@@ -30,6 +32,7 @@
 .timer {
     font-family: 'Yomogi-Regular';
     font-size: 24px;
+    color: #f7d7cd;
 }
 
 .timer h2 {
@@ -40,6 +43,7 @@
 .timer-controls button{
     font-family: 'Yomogi-Regular';
     font-size: 16px;
+    margin-top: 5px;
     margin-bottom: 10px;
     cursor: pointer;
 }

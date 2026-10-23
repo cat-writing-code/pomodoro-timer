@@ -66,5 +66,11 @@ function pauseTimer() {
 
 // when reset is clicked, reset the timer
 function resetTimer() {
+    if (tickHandel !== null) {
+        clearInterval(tickHandel);
+        tickHandel = null;
+    }
 
+    remainingMS = 0;
+    onTick(remainingMS);
 }
