@@ -13,10 +13,18 @@
     padding: 1px;
 }
 
+.title h1 {
+    margin-bottom: 0px;
+}
+
 .status {
     font-family: 'Yomogi-Regular';
     font-size: 18px;
-    padding: -15px;
+}
+
+.status h2 {
+    margin-top: 2px;
+    margin-bottom: 0px;
 }
 
 .timer {
@@ -24,6 +32,13 @@
     font-size: 24px;
 }
 
-.time-controls {
+.timer h2 {
+    margin-top: -5px;
+    margin-bottom: 0px;
+}
+
+.timer-controls button{
     font-family: 'Yomogi-Regular';
+    font-size: 16px;
+    margin-bottom: 10px;
 }
