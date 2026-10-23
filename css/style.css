@@ -1,16 +1,29 @@
 @font-face {
     font-family: Yomogi-Regular;
-    src: url('assets/fonts/Yomogi-Regular.ttf');
+    src: url('../assets/fonts/Yomogi-Regular.ttf');
 }
 @font-face {
     font-family: Matcha;
-    src: url('assets/fonts/Matcha Mint.ttf');
+    src: url('../assets/fonts/Matcha Mint.ttf');
 }
 
-title {
-    font-family: Matcha;
+.title {
+    font-family: 'Matcha';
+    font-size: 26px;
+    padding: 1px;
 }
 
-time-controls {
-    font-family: Yomogi-Regular, sans-serif;
+.status {
+    font-family: 'Yomogi-Regular';
+    font-size: 18px;
+    padding: -15px;
+}
+
+.timer {
+    font-family: 'Yomogi-Regular';
+    font-size: 24px;
+}
+
+.time-controls {
+    font-family: 'Yomogi-Regular';
 }
