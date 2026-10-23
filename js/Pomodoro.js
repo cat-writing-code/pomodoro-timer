@@ -17,6 +17,7 @@ var phase = 'Work';
 var work = 'Work', sb = 'Short Break', lb = 'Long Break';
 var workCount = 0;
 var timerDis, statusDis;
+var alarm = null;
 
 // check if the user has completed 4 short breaks and is ready for a long break
 function longBreakCheck() {
@@ -29,11 +30,12 @@ function longBreakCheck() {
 
 function completeWork() {
     workCount++;
-    // wait until play button is clicked to start the break timer
+    playAlarm();
     startBreak();
 }
 
 function completeBreak() {
+    playAlarm();
     loadPhase(work);
 }
 
@@ -81,10 +83,28 @@ function render(t) {
     timerDis.textContent = formatTime(t);
 }
 
+function playAlarm() {
+    if (alarm) {
+        alarm.currentTime = 0;
+        alarm.play().catch(e => console.log("alarm failed to play", e));
+    }
+}
+
+function stopAlarm() {
+    if (alarm) {
+        alarm.pause();
+        alarm.currentTime = 0;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const click = new Audio('assets/sfx/click.mp3');
+    alarm = new Audio('assets/sfx/alarm.mp3');
     timerDis = document.querySelector('.timer h2');
     statusDis = document.querySelector('.status h2');
+
+    // set up alarm
+    alarm.loop = true;
 
     // helper func for button click
     function playClick() {
@@ -94,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('startButt').addEventListener('click', function () {
         playClick();
+        stopAlarm();
         startTimer();
     });
     document.getElementById('pauseButt').addEventListener('click', function () {
@@ -102,11 +123,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     document.getElementById('stopButt').addEventListener('click', function () {
         playClick();
+        stopAlarm();
         pauseTimer();
         loadPhase(phase);
     });
     document.getElementById('resetButt').addEventListener('click', function () {
         playClick();
+        stopAlarm();
         resetTimer();
         workCount = 0;
         loadPhase(work);
