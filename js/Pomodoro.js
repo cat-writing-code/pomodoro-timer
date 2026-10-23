@@ -61,13 +61,13 @@ function durFor(p) {
 
 function loadPhase(p) {
     phase = p;
-    statusDis.textContent = labelFor(p);
+    statusDis.textContent = p;
     var done = (p == work) ? completeWork : completeBreak;
     setTimer(durFor(p), render, done);
 }
 
 function formatTime(t) {
-    var totalSecs = Math.cell(t/1000);
+    var totalSecs = Math.ceil(t/1000);
     var mins = Math.floor(totalSecs/60);
     var secs = totalSecs % 60;
 
@@ -96,4 +96,6 @@ document.addEventListener('DOMContentLoaded', function () {
         workCount = 0;
         loadPhase(work);
     });
+
+    loadPhase(work);
 });

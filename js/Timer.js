@@ -1,8 +1,8 @@
 var tickHandel = null;
 var endTime = 0;
 var remainingMS = 0;
-var onTick() = function() {};
-var onDone() = function() {};
+var onTick = function() {};
+var onDone = function() {};
 
 // set the timer with a fresh countdown
 function setTimer(ms, ot, od) {
